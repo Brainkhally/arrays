@@ -31,5 +31,22 @@ public class Task06 {
         Random rnd = new Random(seed);
 
         // TODO: Пишите код здесь
+        int[] arr = new int[10];
+        final int MIN = -5;
+        final int MAX = 5;
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = rnd.nextInt(MAX - MIN + 1) +MIN;
+        }
+        // -5 5 2 2 2 3 3 4
+        int[] count =  new int[MAX - MIN + 1];
+        for (int i = 0; i < arr.length; i++) {
+            count[arr[i] + MAX]++;
+
+        }
+        for (int i = 0; i < arr.length; i++) {
+            if (count[arr[i] + MAX] == 1) {
+                System.out.printf("%d ->  %d индекс\n", arr[i], i);
+            }
+        }
     }
 }

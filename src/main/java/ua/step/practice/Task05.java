@@ -2,6 +2,7 @@ package ua.step.practice;
 
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
+import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -24,5 +25,32 @@ public class Task05 {
         Random rnd = new Random(seed);
 
         // TODO: Пишите код здесь
+        int[] arr = new int[10];
+        final int MIN = -5;
+        final int MAX = 5;
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = rnd.nextInt(MAX - MIN + 1) +MIN;
+        }
+        // -5 5 2 2 2 3 3 4
+        int[] count =  new int[MAX - MIN + 1];
+        for (int i = 0; i < arr.length; i++) {
+            count[arr[i] + MAX]++;
+            
+        }
+        for (int i = 0; i < count.length; i++) {
+if (count[i] > 1) {
+    System.out.printf("%d -  %d ", i + MIN, count[i], count[i]);
+    switch (count[i] ) {
+        case 2:
+        case 3:
+        case 4:
+            System.out.println("раза");
+            break;
+        default:
+            System.out.println("раз");
+            break;
+    }
+}
+        }
     }
 }

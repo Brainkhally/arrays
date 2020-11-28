@@ -19,5 +19,16 @@ public class Task03 {
         for (int i = 0; i < arr.length; i++) {
             arr[i] = scanner.nextInt();
         }
+
+        // 1 3 1 4 5
+        boolean yes = true;
+        for (int i = 1; i < arr.length; i++) {
+if (arr[0] != arr[i]) {
+    yes = false;
+    break;
+            }
+            
+        }
+        System.out.println(yes ? "Yes" : "No");
     }
 }
